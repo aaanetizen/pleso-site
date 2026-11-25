@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PLESO басейни</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="PLESO — офіційний дилер Diamant Unipool в Україні. Басейни з нержавіючої сталі AISI 316L: три комплектації 5 × 3 м, доставка, монтаж і запуск.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: editorial index — full-bleed water photography, a numbered package index, spec "passports" set in mono, wide white margins. */
+:root{
+  --bg:#f6f7f5;          /* cool paper, slight green-grey bias */
+  --bg-2:#eceeeb;
+  --fg:#121514;          /* graphite ink */
+  --muted:#5f6764;
+  --line:#d3d8d5;
+  --steel:#8d9794;       /* brushed K400 */
+  --accent:#1f5f5a;      /* deep pool teal, used only for actions */
+  --accent-fg:#ffffff;
+  --on-img:#ffffff;
+  --shade:rgba(8,12,11,.55);
+  --f-display:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+  --gut-r:max(16px,env(safe-area-inset-right,0px));
+  --pad:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1110;--bg-2:#161a19;--fg:#e9ecea;--muted:#9aa39f;--line:#2a302e;--steel:#7d8885;--accent:#5fb3a9;--accent-fg:#06110f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1110;--bg-2:#161a19;--fg:#e9ecea;--muted:#9aa39f;--line:#2a302e;--steel:#7d8885;--accent:#5fb3a9;--accent-fg:#06110f;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{padding-left:calc(var(--gut) + var(--pad) - 16px);padding-right:calc(var(--gut-r) + var(--pad) - 16px)}
+.lbl{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.disp{font-family:var(--f-display);font-weight:400;letter-spacing:-.035em;line-height:.95;text-wrap:balance;margin:0}
+h1,h2,h3{text-wrap:balance}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:18px;transition:background .4s var(--ease),color .4s var(--ease),padding .4s var(--ease)}
+.hdr.on-img{color:var(--on-img)}
+.hdr.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--fg);padding-block:12px;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--f-display);font-weight:600;letter-spacing:.32em;font-size:15px;display:flex;align-items:baseline;gap:12px;white-space:nowrap}
+.logo small{font-family:var(--f-mono);font-weight:400;letter-spacing:.06em;font-size:10.5px;opacity:.7;text-transform:uppercase}
+.nav{display:flex;gap:28px;align-items:center;font-size:14px}
+.nav a{position:relative;padding-block:4px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover::after,.nav a.cur::after{transform:scaleX(1);transform-origin:left}
+.nav .cta{border:1px solid currentColor;padding:9px 16px;border-radius:40px;transition:background .3s,color .3s}
+.nav .cta::after{display:none}
+.nav .cta:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.hdr.on-img .nav .cta:hover{background:var(--on-img);color:#111;border-color:var(--on-img)}
+.burger{display:none;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:900px){.nav{display:none}.burger{display:block}.logo small{display:none}}
+.menu{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding-top:calc(env(safe-area-inset-top,0px) + 18px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 28px);clip-path:inset(0 0 100% 0);transition:clip-path .6s var(--ease);visibility:hidden}
+.menu.open{clip-path:inset(0 0 0 0);visibility:visible}
+.menu nav{display:flex;flex-direction:column;gap:6px}
+.menu nav a{font-family:var(--f-display);font-size:clamp(38px,11vw,64px);letter-spacing:-.03em;line-height:1.05}
+.menu .top{display:flex;justify-content:space-between;align-items:center}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:100;background:#0e1110;color:#e9ecea;display:flex;align-items:flex-end;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 24px) max(24px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(24px,env(safe-area-inset-left,0px));transition:transform .9s var(--ease)}
+.loader .logo{font-size:clamp(28px,6vw,64px);letter-spacing:.3em}
+.loader .pct{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em}
+.loader.done{transform:translateY(-100%)}
+
+/* ---------- main transitions ---------- */
+main{transition:opacity .35s var(--ease)}
+main.out{opacity:0}
+
+/* reveal: only elements below the fold at render get the pre state */
+.rv.pre{opacity:0;transform:translateY(28px)}
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.clip{overflow:hidden}
+.clip.pre img{clip-path:inset(100% 0 0 0);transform:scale(1.12)}
+.clip img{clip-path:inset(0 0 0 0);transition:clip-path 1.3s var(--ease),transform 1.6s var(--ease)}
+.lines .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.lines .ln>span{display:block;animation:lineUp 1.1s var(--ease) both}
+.lines .ln:nth-child(2)>span{animation-delay:.08s}.lines .ln:nth-child(3)>span{animation-delay:.16s}
+@keyframes lineUp{from{transform:translateY(105%)}to{transform:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:min(100svh,980px);min-height:560px;overflow:hidden;color:var(--on-img);background:#1b2220}
+.hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s var(--ease)}
+.hero .slide.act{opacity:1}
+.hero .slide img{width:100%;height:100%;object-fit:cover}
+.hero .slide.act img{animation:kb 9s linear both}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,11,.35) 0%,rgba(8,12,11,0) 28%,rgba(8,12,11,0) 50%,rgba(8,12,11,.62) 100%);pointer-events:none}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:calc(28px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.hero h1{font-size:clamp(52px,10.5vw,168px)}
+.hero .meta{display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
+.hero .lbl{color:rgba(255,255,255,.82)}
+.counter{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.counter .bar{width:64px;height:1px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.counter .bar i{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
+.counter .bar i.run{animation:bar 6s linear forwards}
+@keyframes bar{to{transform:scaleX(1)}}
+.hero .view{font-size:14px;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px}
+.hero .badge{position:absolute;z-index:2;top:calc(88px + env(safe-area-inset-top,0px));left:0;right:0}
+@media (max-width:700px){.hero .cap{grid-template-columns:1fr}.hero .meta{align-items:flex-start;text-align:left}}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(72px,11vw,160px)}
+.sec.tight{padding-block:clamp(48px,7vw,96px)}
+.sec-head{display:grid;grid-template-columns:minmax(120px,1fr) 3fr;gap:24px;align-items:baseline;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head h2{font-family:var(--f-display);font-weight:400;font-size:clamp(34px,5.4vw,80px);letter-spacing:-.035em;line-height:1;margin:0}
+@media (max-width:700px){.sec-head{grid-template-columns:1fr;gap:12px}}
+.statement{font-family:var(--f-display);font-weight:300;font-size:clamp(26px,3.6vw,52px);line-height:1.12;letter-spacing:-.025em;max-width:22ch;margin:0}
+.statement em{font-style:normal;color:var(--muted)}
+.intro{display:grid;grid-template-columns:minmax(120px,1fr) 3fr;gap:24px}
+.intro .side{display:flex;flex-direction:column;gap:18px}
+.intro p.body{max-width:58ch;color:var(--muted);margin:28px 0 0}
+@media (max-width:700px){.intro{grid-template-columns:1fr}}
+
+/* filters (Søren Rose-style category tabs) */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font-size:14px;padding:7px 14px;border:1px solid var(--line);border-radius:40px;color:var(--muted);transition:all .3s}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.filters sup{font-family:var(--f-mono);font-size:10px;margin-left:4px}
+
+/* package index */
+.index{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:70px 1.4fr 1.6fr 1fr 32px;gap:20px;align-items:center;padding-block:clamp(22px,3vw,34px);border-bottom:1px solid var(--line);position:relative;transition:color .4s,padding .5s var(--ease)}
+.row .n{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.row h3{font-family:var(--f-display);font-weight:400;font-size:clamp(34px,5vw,72px);letter-spacing:-.04em;line-height:1;margin:0;transition:transform .6s var(--ease)}
+.row .spec{color:var(--muted);font-size:14.5px}
+.row .price{font-family:var(--f-display);font-size:clamp(18px,1.8vw,24px);letter-spacing:-.01em;text-align:right;white-space:nowrap}
+.row .price small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.row .arr{font-size:22px;transition:transform .5s var(--ease)}
+.row:hover h3{transform:translateX(14px)}
+.row:hover .arr{transform:translateX(6px) rotate(-45deg)}
+.row .thumb{display:none}
+.row.hide{display:none}
+@media (max-width:800px){
+  .row{grid-template-columns:1fr auto;gap:10px 16px}
+  .row .n{grid-column:1/-1}
+  .row .spec{grid-column:1/-1;order:5}
+  .row .arr{display:none}
+  .row .thumb{display:block;grid-column:1/-1;order:-1;aspect-ratio:16/10;overflow:hidden}
+  .row .thumb img{width:100%;height:100%;object-fit:cover}
+}
+.peek{position:fixed;z-index:40;width:min(30vw,420px);aspect-ratio:4/3;pointer-events:none;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .35s var(--ease),transform .5s var(--ease);left:0;top:0}
+.peek.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.peek img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+.peek img.on{opacity:1}
+@media (hover:none),(max-width:800px){.peek{display:none}}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;z-index:90;pointer-events:none;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--fg);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-family:var(--f-mono);letter-spacing:.06em;text-transform:uppercase;transform:scale(0)}
+.cur.on{transform:scale(1)}
+@media (hover:none){.cur{display:none}}
+
+/* full-bleed band */
+.band{position:relative;height:clamp(380px,78vh,860px);overflow:hidden}
+.band img{position:absolute;left:0;right:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
+.band .cap{position:absolute;left:0;right:0;bottom:24px;z-index:2;color:var(--on-img);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.band .cap .lbl{color:rgba(255,255,255,.85)}
+.band::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(0deg,rgba(8,12,11,.45),transparent)}
+
+/* steel figures */
+.figs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.fig{padding:28px 20px 8px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.fig:last-child{border-right:0}
+.fig b{font-family:var(--f-display);font-weight:300;font-size:clamp(40px,5.4vw,84px);letter-spacing:-.045em;line-height:1}
+.fig span{color:var(--muted);font-size:14px;max-width:24ch}
+.fig+.fig{padding-left:20px}
+@media (max-width:800px){.figs{grid-template-columns:1fr 1fr}.fig:nth-child(2){border-right:0}.fig:nth-child(3){padding-left:0}.fig:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* compare */
+.cmp-wrap{overflow-x:auto;border-top:1px solid var(--fg)}
+.cmp{width:100%;border-collapse:collapse;min-width:640px;font-size:15px}
+.cmp th,.cmp td{text-align:left;padding:15px 12px 15px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:var(--f-display);font-weight:500;font-size:22px;letter-spacing:-.02em;padding-top:20px}
+.cmp tbody th{font-weight:400;color:var(--muted);width:24%}
+.cmp td.no{color:var(--steel)}
+.cmp tr.pr td{font-family:var(--f-display);font-size:22px;letter-spacing:-.02em}
+.cmp tr.pr th{color:var(--fg)}
+
+/* details grid (asymmetric) */
+.details{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2.4vw,32px);row-gap:clamp(48px,7vw,96px)}
+.det{display:flex;flex-direction:column;gap:16px;min-width:0}
+.det .ph{overflow:hidden;background:var(--bg-2)}
+.det .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.det:hover .ph img{transform:scale(1.04)}
+.det h3{font-family:var(--f-display);font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0}
+.det p{margin:0;color:var(--muted);max-width:46ch;font-size:15px}
+.det .hd{display:flex;gap:16px;align-items:baseline}
+.d1{grid-column:1/8}.d1 .ph{aspect-ratio:4/3}
+.d2{grid-column:9/13;margin-top:22%}.d2 .ph{aspect-ratio:3/4}
+.d3{grid-column:2/6}.d3 .ph{aspect-ratio:1/1}
+.d4{grid-column:7/13}.d4 .ph{aspect-ratio:16/10}
+@media (max-width:800px){.d1,.d2,.d3,.d4{grid-column:1/-1;margin-top:0}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:26px 24px 34px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.step:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.step:not(:nth-child(3n+1)){padding-left:24px}
+.step .n{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.step h3{font-family:var(--f-display);font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0}
+.step p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:800px){.steps{grid-template-columns:1fr}.step{border-right:0!important;padding-left:0!important}}
+
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding-block:22px;font-family:var(--f-display);font-size:clamp(18px,2vw,24px);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{font-style:normal;font-family:var(--f-mono);transition:transform .4s var(--ease);flex:none}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq .a{color:var(--muted);max-width:64ch;padding-bottom:24px;margin:0}
+
+/* big CTA */
+.big-cta{display:flex;flex-direction:column;gap:28px}
+.big-cta .mail{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,9vw,150px);letter-spacing:-.05em;line-height:.95;word-break:break-word}
+.big-cta .mail span{display:inline-block;transition:transform .6s var(--ease)}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:var(--accent-fg);padding:16px 26px;border-radius:40px;font-size:15px;font-weight:500;transition:transform .3s var(--ease),filter .3s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--fg)}
+.btn.ghost:hover{background:var(--fg);color:var(--bg);filter:none}
+.row-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- package page ---------- */
+.p-hero{position:relative;height:min(100svh,1000px);min-height:540px;overflow:hidden;color:var(--on-img);background:#1b2220}
+.p-hero img{position:absolute;inset:-6% 0 auto;width:100%;height:112%;object-fit:cover}
+.p-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,11,.3),rgba(8,12,11,0) 30%,rgba(8,12,11,0) 55%,rgba(8,12,11,.6))}
+.p-hero .cap{position:absolute;left:0;right:0;bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.p-hero h1{font-size:clamp(64px,15vw,230px)}
+.p-hero .lbl{color:rgba(255,255,255,.85)}
+.scroll-cue{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.scroll-cue i{display:inline-block;animation:cue 1.8s var(--ease) infinite;font-style:normal}
+@keyframes cue{0%,100%{transform:translateY(-2px)}50%{transform:translateY(4px)}}
+
+.passport{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px)}
+.passport .desc{display:flex;flex-direction:column;gap:22px}
+.passport .desc p{margin:0;color:var(--muted);max-width:56ch}
+.kv{border-top:1px solid var(--fg);margin:0}
+.kv div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding-block:13px;border-bottom:1px solid var(--line);font-size:15px}
+.kv dt{margin:0}.kv dd{margin:0}
+.kv dt{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.kv .pr dd{font-family:var(--f-display);font-size:26px;letter-spacing:-.02em;line-height:1.1}
+@media (max-width:800px){.passport{grid-template-columns:1fr}.kv div{grid-template-columns:120px 1fr}}
+
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,2vw,24px);align-items:start}
+.gal figure{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.gal .ph{overflow:hidden;background:var(--bg-2)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal figcaption{font-size:13px;color:var(--muted)}
+.g1{grid-column:1/8}.g1 .ph{aspect-ratio:4/3}
+.g2{grid-column:8/13}.g2 .ph{aspect-ratio:4/5}
+.g3{grid-column:3/11;margin-top:clamp(24px,5vw,64px)}.g3 .ph{aspect-ratio:16/9}
+@media (max-width:700px){.g1,.g2,.g3{grid-column:1/-1;margin-top:0}}
+.quote{font-family:var(--f-display);font-weight:300;font-size:clamp(24px,3vw,40px);letter-spacing:-.02em;line-height:1.15;max-width:26ch;margin:0}
+
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.incl ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--fg)}
+.incl li{display:grid;grid-template-columns:36px 1fr;gap:10px;padding-block:13px;border-bottom:1px solid var(--line);font-size:15.5px}
+.incl li .n{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);padding-top:3px}
+.plan{background:var(--bg-2);padding:clamp(16px,3vw,32px)}
+.plan svg{width:100%;height:auto;display:block}
+.plan .lbl{margin-top:12px}
+@media (max-width:800px){.incl{grid-template-columns:1fr}}
+
+/* configurator */
+.cfg{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
+.opts{border-top:1px solid var(--fg)}
+.opt{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:start;padding-block:16px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .3s}
+.opt:hover{background:color-mix(in srgb,var(--bg-2) 70%,transparent)}
+.opt input{appearance:none;-webkit-appearance:none;width:20px;height:20px;border:1px solid var(--steel);border-radius:50%;margin:2px 0 0;display:grid;place-items:center;cursor:pointer;transition:all .25s}
+.opt input::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent-fg);transform:scale(0);transition:transform .25s var(--ease)}
+.opt input:checked{background:var(--accent);border-color:var(--accent)}
+.opt input:checked::after{transform:scale(1)}
+.opt b{font-weight:500;display:block}
+.opt span{color:var(--muted);font-size:14px;display:block;margin-top:2px;max-width:52ch}
+.opt .p{font-family:var(--f-mono);font-size:13px;white-space:nowrap;padding-top:2px}
+.sum{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));background:var(--bg-2);padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:18px}
+.sum .tot{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,5vw,68px);letter-spacing:-.045em;line-height:1}
+.sum ul{list-style:none;margin:0;padding:0;font-size:14px;display:flex;flex-direction:column;gap:6px}
+.sum li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.sum li span:last-child{font-family:var(--f-mono);font-size:12.5px;white-space:nowrap}
+.sum .note{font-size:12.5px;color:var(--muted);margin:0}
+@media (max-width:900px){.cfg{grid-template-columns:1fr}.sum{position:static}}
+
+/* form */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.form .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--fg);background:transparent;border:0;border-bottom:1px solid var(--steel);padding:10px 0;border-radius:0;width:100%;transition:border-color .3s}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.field select option{background:var(--bg);color:var(--fg)}
+.field textarea{resize:vertical;min-height:90px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--fg)}
+.field .err{font-size:12.5px;color:#b4442c;min-height:0}
+.form .fine{font-size:12.5px;color:var(--muted);margin:0}
+@media (max-width:640px){.form{grid-template-columns:1fr}}
+.receipt{border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:14px;animation:fadeUp .7s var(--ease) both}
+.receipt pre{font-family:var(--f-mono);font-size:13px;white-space:pre-wrap;margin:0;background:var(--bg-2);padding:16px;max-height:340px;overflow:auto}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.more{border-top:1px solid var(--line)}
+.more a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-block:20px;border-bottom:1px solid var(--line);font-family:var(--f-display);font-size:clamp(26px,3.4vw,46px);letter-spacing:-.03em;transition:padding .5s var(--ease)}
+.more a:hover{padding-left:14px}
+.more a small{font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--muted)}
+
+/* page header for text pages */
+.ph-top{padding-top:calc(150px + env(safe-area-inset-top,0px))}
+.ph-top h1{font-size:clamp(52px,10vw,150px)}
+
+.resp{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.resp th,.resp td{text-align:left;padding:14px 12px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.resp thead th{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400;border-bottom:1px solid var(--fg)}
+.resp td:first-child{font-weight:500;width:32%}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.split .ph{overflow:hidden;background:var(--bg-2)}
+.split .ph img{width:100%;height:100%;object-fit:cover}
+@media (max-width:800px){.split{grid-template-columns:1fr}}
+
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);border-top:1px solid var(--line);padding-top:28px}
+.cols3 h3{font-family:var(--f-display);font-weight:500;font-size:24px;letter-spacing:-.02em;margin:10px 0 12px}
+.cols3 p{color:var(--muted);margin:0 0 12px;font-size:15.5px}
+@media (max-width:800px){.cols3{grid-template-columns:1fr}}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,6vw,96px);align-items:start}
+.contact-list{border-top:1px solid var(--fg)}
+.contact-list div{display:grid;grid-template-columns:130px 1fr auto;gap:12px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.copy{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:5px 9px;border-radius:30px}
+.copy:hover{color:var(--fg);border-color:var(--fg)}
+@media (max-width:800px){.contact-grid{grid-template-columns:1fr}.contact-list div{grid-template-columns:100px 1fr auto}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-top:clamp(56px,8vw,110px);padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;font-size:14.5px}
+.f-grid h4{margin:0 0 12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.f-grid a,.f-grid p{display:block;margin:0 0 6px}
+.f-grid a:hover{color:var(--accent)}
+.f-word{font-family:var(--f-display);font-weight:600;letter-spacing:.2em;font-size:clamp(64px,19vw,300px);line-height:.8;margin-top:clamp(48px,7vw,96px);color:var(--fg);overflow:hidden;white-space:nowrap}
+.f-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:24px;font-size:12.5px;color:var(--muted)}
+@media (max-width:800px){.f-grid{grid-template-columns:1fr 1fr}.f-grid>div:first-child{grid-column:1/-1}}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--fg);color:var(--bg);padding:12px 20px;border-radius:40px;font-size:14px;z-index:95;transition:transform .5s var(--ease)}
+.toast.on{transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .loader{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<div class="loader" id="loader" aria-hidden="true"><div class="logo">PLESO</div><div class="pct num" id="pct">000</div></div>
+
+<header class="hdr wrap on-img" id="hdr">
+  <a class="logo" href="#home" aria-label="PLESO, на головну">PLESO <small>Diamant Unipool · Україна</small></a>
+  <nav class="nav" aria-label="Головна навігація">
+    <a href="#home" data-to="komplektatsii">Комплектації</a>
+    <a href="#dostavka">Доставка і монтаж</a>
+    <a href="#pro-nas">Про нас</a>
+    <a href="#kontakty" class="cta">Обговорити проєкт</a>
+  </nav>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Меню</button>
+</header>
+
+<div class="menu wrap" id="menu" aria-hidden="true">
+  <div class="top"><span class="logo">PLESO</span><button class="burger" style="display:block" id="menuClose">Закрити</button></div>
+  <nav aria-label="Мобільне меню">
+    <a href="#home" data-to="komplektatsii">Комплектації</a>
+    <a href="#bazova">Базова</a>
+    <a href="#komfort">Комфорт</a>
+    <a href="#relaks">Релакс</a>
+    <a href="#dostavka">Доставка і монтаж</a>
+    <a href="#pro-nas">Про нас</a>
+    <a href="#kontakty">Контакти</a>
+  </nav>
+  <div class="lbl" id="menuContact"></div>
+</div>
+
+<main id="app"></main>
+
+<footer class="wrap" id="footer"></footer>
+
+<div class="peek" id="peek" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true">Дивитись</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================
+   НАЛАШТУВАННЯ — замініть перед запуском
+   ========================================================= */
+const CONFIG = {
+  brand: "PLESO",
+  phone: "+380 67 000 00 00",
+  email: "hello@pleso.com.ua",
+  telegram: "@pleso_pools",
+  city: "Київ · працюємо по всій Україні",
+  hours: "Пн–Пт, 9:00–19:00",
+  company: "ТОВ «Плесо»",
+  // Адреса обробника заявок (Formspree, Telegram-бот, CRM). Порожньо — заявка формується для копіювання.
+  formEndpoint: ""
+};
+
+const IMG = p => "img/" + p;
+const eur = n => n == null ? "за розрахунком" : new Intl.NumberFormat("uk-UA").format(n).replace(/ | /g," ") + " €";
+
+const STEEL = [
+  ["316L","Нержавіюча сталь AISI 316L (1.4404) з молібденом. Стійка до хлору й солі."],
+  ["2,5 мм","Товщина стінок чаші. Дно — 2 мм, з протиковзким тисненням за бажанням."],
+  ["K400","Шліфована поверхня. Вода виглядає чистою, сталь — рівною й теплою."],
+  ["10 см","Утеплення дна в базі. Стінки — полістирол 3 + 2 см."]
+];
+
+const OPT = {
+  depth15b:{t:"Глибина 1,5 м",d:"Замість 1,4 м. Більше води для плавання.",p:840},
+  depth15o:{t:"Глибина 1,5 м",d:"Замість 1,34 м. Для дорослих, які плавають щодня.",p:1450},
+  rolet:{t:"Прихована ролета з лавою",d:"Ламелі накривають воду, вал схований під лавою всередині чаші. Тераса лишається вільною.",p:12200},
+  flow:{t:"Протитечія FLOWjet INOX 120",d:"Турбіна до 120 м³/год. Плавання на місці в басейні 5 м.",p:3200},
+  flow180:{t:"Посилена протитечія FLOWjet INOX 180",d:"Замість 120 м³/год — до 180 м³/год, для тренувань.",p:300},
+  massage:{t:"Гідромасаж, 3 форсунки",d:"Комплект Diamant з насосом і підсмоктуванням повітря.",p:3400},
+  rgb:{t:"RGB-підсвітка з пультом",d:"Замість теплого білого світла — будь-який колір вечора.",p:300},
+  antislipB:{t:"Протиковзке дно",d:"Тиснення на дні чаші. Спокійніше для дітей.",p:730},
+  antislipO:{t:"Протиковзке дно",d:"Тиснення на дні чаші. Спокійніше для дітей.",p:720},
+  freeB:{t:"Окремостояче виконання",d:"Самонесуча чаша для тераси, даху чи ділянки з ухилом. Утеплення 10 + 3 см.",p:6250},
+  freeO:{t:"Окремостояче виконання",d:"Самонесуча чаша для тераси, даху чи ділянки з ухилом. Утеплення 10 + 3 см.",p:3850},
+  shaft:{t:"Технічна шахта 150 × 100 × 120 см",d:"Поліпропіленова шахта з кришкою для фільтра й насоса.",p:660},
+  heat:{t:"Підігрів води",d:"Теплообмінник або тепловий насос. Підбираємо під об’єм і ваш дім.",p:null},
+  auto:{t:"Автоматизація догляду",d:"Дозування хімії й керування фільтрацією з телефона.",p:null}
+};
+
+const PK = {
+  bazova:{
+    n:"01",name:"Базова",type:"Скімерний",cat:"skim",price:25400,depth:"1,4 м",entry:"Навісна драбина",
+    title:"Простір для першого запливу.",
+    lead:"Скімерна чаша для щоденного плавання і спокійних вечорів. Чітка форма, тепле світло під водою, навісна драбина зі сталі. Основа, до якої можна додати все інше пізніше.",
+    quote:"Чиста сталь, рівна вода і нічого зайвого навколо.",
+    img:"bazova.jpg",peek:"bazova.jpg",
+    gal:[["bazova.jpg","Скімерний басейн 5 × 3 м у приватному саду"],["d-voda.jpg","Шліфована сталь K400 під водою"],["montazh.jpg","Чаша приходить з Чехії цілою і ставиться краном"]],
+    filtration:"Вода з поверхні йде в скімер, проходить фільтр і повертається в басейн через дві форсунки. Донний злив забирає воду знизу.",
+    incl:["Чаша INOXline 5 × 3 × 1,4 м, сталь AISI 316L","Утеплення дна 10 см, стінок 3 + 2 см","Скімер Diamant Slim","Донний злив","Дві форсунки повернення води","LED-прожектор, теплий білий","Навісна драбина з нержавіючої сталі","Трубна розводка до басейну"],
+    opts:["depth15b","rolet","flow","massage","rgb","antislipB","freeB","shaft","heat"]
+  },
+  komfort:{
+    n:"02",name:"Комфорт",type:"Переливний",cat:"over",price:46900,depth:"1,34 м",entry:"Римські сходи",
+    title:"Чиста лінія води.",
+    lead:"Вода стоїть урівень з терасою і переливається в жолоб по периметру. Римські сходи, прихована ролета під лавою і світло. Усе, щоб басейн був продовженням дому.",
+    quote:"Дзеркало води на рівні тераси. Механізм ролети не видно.",
+    img:"komfort.jpg",peek:"komfort.jpg",
+    gal:[["komfort.jpg","Переливний басейн із прихованою ролетою"],["d-skhody.jpg","Римські сходи і зона відпочинку"],["d-perelyv.jpg","Переливний жолоб з решіткою по периметру"]],
+    filtration:"Вода переливається через край у жолоб по периметру, збирається в буферну ємність, проходить фільтр і повертається через форсунки в дні та стінках.",
+    incl:["Переливна чаша INOXline 5 × 3 × 1,34 м, AISI 316L","Переливний жолоб з решіткою","Римські сходи з посиленою лавою","Прихована ролета Diamant з мотором","Донний злив і форсунки","LED-прожектор, теплий білий","Розводка до буферної ємності","Утеплення дна 10 см"],
+    opts:["depth15o","flow","massage","rgb","antislipO","freeO","shaft","heat","auto"]
+  },
+  relaks:{
+    n:"03",name:"Релакс",type:"Переливний",cat:"over",price:55400,depth:"1,5 м",entry:"Римські сходи",
+    title:"Свій ритм. Свій відпочинок.",
+    lead:"Плавання і відновлення в одному басейні. Протитечія для тренування, лава з аеромасажем, щоб залишитися у воді довше, і все, що є в «Комфорті».",
+    quote:"Ранкові 30 хвилин проти течії. Вечір на лаві з бульбашками.",
+    img:"relaks.jpg",peek:"relaks.jpg",
+    gal:[["relaks.jpg","Переливний басейн із зоною масажу"],["d-masazh.jpg","Лава з масажними форсунками"],["d-rolet.jpg","Ролета розгортається з-під лави"]],
+    filtration:"Переливна схема: жолоб, буферна ємність, фільтр і повернення через форсунки. Протитечія й масаж мають власні насоси і не навантажують фільтрацію.",
+    incl:["Переливна чаша INOXline 5 × 3 × 1,5 м, AISI 316L","Переливний жолоб з решіткою","Римські сходи з посиленою лавою","Прихована ролета Diamant з мотором","Протитечія FLOWjet INOX 120","Трубчаста лава з аеромасажем","LED-прожектор, форсунки, донний злив","Розводка до буферної ємності"],
+    opts:["flow180","rgb","antislipO","shaft","heat","auto"]
+  }
+};
+const ORDER = ["bazova","komfort","relaks"];
+const HERO = ["komfort","relaks","bazova"];
+
+const FAQ = [
+  ["Що входить у ціну комплектації?","Чаша з нержавіючої сталі та обладнання, перелічене на сторінці комплектації. Доставку з Чехії, земляні роботи, монтаж і запуск рахуємо окремо після огляду ділянки — вони залежать від під’їзду, ґрунту й відстані."],
+  ["Чому ціни в євро?","Басейни виготовляє завод Diamant Unipool у Чехії, і прайс виробника в євро. Оплата — у гривні за комерційним курсом банку на день оплати."],
+  ["Скільки чекати на басейн?","Виробництво починається після передоплати. Точний строк виготовлення і доставки фіксуємо в договорі: він залежить від моделі та черги на заводі. Назвемо його під час першої розмови."],
+  ["Яка гарантія?","Гарантію на чашу дає виробник, на обладнання — його виробники, на наш монтаж — ми. Строки кожної гарантії вписуємо в договір."],
+  ["Чи можна інший розмір?","Так. Скімерні чаші Diamant бувають від 4 × 3 до 10 × 3,5 м, переливні — від 4 × 3 до 9 × 3,3 м. Напишіть бажаний розмір, і ми порахуємо."],
+  ["Сталь не нагрівається на сонці?","Вода має велику теплоємність, і сталь під нею тримає температуру води. Шліфування K400 не дає відблисків, а утеплення дна й стінок зберігає тепло довше."]
+];
+
+const PROCESS = [
+  ["Розмова","Обговорюємо, як ви хочете користуватися басейном, і обираємо комплектацію."],
+  ["Огляд і специфікація","Дивимось ділянку або план, фіксуємо розмір, оснащення і склад робіт."],
+  ["Договір і передоплата","Підписуємо специфікацію з ціною в євро. Після передоплати завод починає виготовлення."],
+  ["Виготовлення в Чехії","Чашу зварюють і шліфують на заводі Diamant Unipool у Валашському Меджиржичі."],
+  ["Доставка","Веземо чашу цілою. Перевіряємо маршрут, під’їзд і місце для крана заздалегідь."],
+  ["Монтаж і запуск","Встановлюємо чашу й обладнання, запускаємо системи і показуємо, як доглядати за водою."]
+];
+
+/* ---------- helpers ---------- */
+const $ = (s,el=document) => el.querySelector(s);
+const $$ = (s,el=document) => [...el.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const lines = arr => `<span class="lines">${arr.map(l=>`<span class="ln"><span>${l}</span></span>`).join("")}</span>`;
+
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),2200)}
+function copyText(txt){
+  const done=()=>toast("Скопійовано");
+  try{navigator.clipboard.writeText(txt).then(done,()=>fallback())}catch(e){fallback()}
+  function fallback(){const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done()}catch(e){toast("Виділіть текст і скопіюйте вручну")}ta.remove()}
+}
+
+/* ---------- shared blocks ---------- */
+function planSVG(key){
+  const k=key, x=60,y=56,w=480,h=288;
+  let extra="";
+  if(k==="bazova"){
+    extra+=`<rect x="${x+w-46}" y="${y+h/2-34}" width="16" height="68" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+    <line x1="${x+w-46}" y1="${y+h/2-12}" x2="${x+w-30}" y2="${y+h/2-12}" stroke="var(--fg)"/><line x1="${x+w-46}" y1="${y+h/2+12}" x2="${x+w-30}" y2="${y+h/2+12}" stroke="var(--fg)"/>
+    <rect x="${x+90}" y="${y-2}" width="36" height="12" fill="var(--bg-2)" stroke="var(--fg)" stroke-width="1.5"/>
+    <text x="${x+108}" y="${y+30}" text-anchor="middle" class="t">скімер</text>
+    <text x="${x+w-38}" y="${y+h/2+56}" text-anchor="middle" class="t">драбина</text>
+    <circle cx="${x+w/2}" cy="${y+h/2}" r="5" fill="none" stroke="var(--fg)"/><text x="${x+w/2}" y="${y+h/2+22}" text-anchor="middle" class="t">донний злив</text>`;
+  } else {
+    extra+=`<rect x="${x-10}" y="${y-10}" width="${w+20}" height="${h+20}" fill="none" stroke="var(--fg)" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="${x+w/2}" y="${y-18}" text-anchor="middle" class="t">переливний жолоб по периметру</text>`;
+    [60,96,132].forEach(r=>extra+=`<path d="M ${x} ${y+h-r} A ${r} ${r} 0 0 0 ${x+r} ${y+h}" fill="none" stroke="var(--fg)" stroke-width="1.2"/>`);
+    extra+=`<text x="${x+80}" y="${y+h-150}" class="t">римські сходи</text>`;
+    extra+=`<rect x="${x+w-44}" y="${y}" width="44" height="${h}" fill="url(#hatch)" stroke="var(--fg)" stroke-width="1"/>
+    <text x="${x+w-22}" y="${y+h/2}" text-anchor="middle" class="t" transform="rotate(-90 ${x+w-22} ${y+h/2})">лава + прихована ролета</text>`;
+    if(k==="relaks"){
+      extra+=`<rect x="${x+140}" y="${y}" width="250" height="34" fill="none" stroke="var(--fg)" stroke-width="1.2"/>`;
+      [170,220,270,320,360].forEach(cx=>extra+=`<circle cx="${x+cx}" cy="${y+17}" r="4" fill="var(--fg)"/>`);
+      extra+=`<text x="${x+265}" y="${y+54}" text-anchor="middle" class="t">лава з аеромасажем</text>`;
+      extra+=`<circle cx="${x+200}" cy="${y+h-4}" r="10" fill="none" stroke="var(--accent)" stroke-width="2"/><text x="${x+200}" y="${y+h-22}" text-anchor="middle" class="t" style="fill:var(--accent)">протитечія</text>`;
+    }
+  }
+  return `<svg viewBox="0 0 600 420" role="img" aria-label="План басейну 5 на 3 метри">
+  <defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--steel)" stroke-width="1.2"/></pattern></defs>
+  <style>.t{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}.d{font-family:var(--f-mono);font-size:12px;fill:var(--fg)}</style>
+  <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  ${extra}
+  <line x1="${x}" y1="${y+h+40}" x2="${x+w}" y2="${y+h+40}" stroke="var(--fg)"/>
+  <line x1="${x}" y1="${y+h+33}" x2="${x}" y2="${y+h+47}" stroke="var(--fg)"/><line x1="${x+w}" y1="${y+h+33}" x2="${x+w}" y2="${y+h+47}" stroke="var(--fg)"/>
+  <text x="${x+w/2}" y="${y+h+62}" text-anchor="middle" class="d">5 000</text>
+  <line x1="${x-34}" y1="${y}" x2="${x-34}" y2="${y+h}" stroke="var(--fg)"/>
+  <line x1="${x-41}" y1="${y}" x2="${x-27}" y2="${y}" stroke="var(--fg)"/><line x1="${x-41}" y1="${y+h}" x2="${x-27}" y2="${y+h}" stroke="var(--fg)"/>
+  <text x="${x-44}" y="${y+h/2}" text-anchor="middle" class="d" transform="rotate(-90 ${x-44} ${y+h/2})">3 000</text>
+  </svg>`;
+}
+
+function formHTML(id, pkgKey){
+  const opts = ORDER.map(k=>`<option value="${k}" ${k===pkgKey?"selected":""}>${PK[k].name} · від ${eur(PK[k].price)}</option>`).join("");
+  return `<form class="form" id="${id}" novalidate>
+    <div class="field"><label for="${id}-name">Ім’я</label><input id="${id}-name" name="name" autocomplete="name" required></div>
+    <div class="field"><label for="${id}-contact">Телефон або email</label><input id="${id}-contact" name="contact" autocomplete="tel" required></div>
+    <div class="field"><label for="${id}-city">Місто або область</label><input id="${id}-city" name="city" autocomplete="address-level2"></div>
+    <div class="field"><label for="${id}-pkg">Комплектація</label><select id="${id}-pkg" name="pkg">${opts}<option value="custom" ${!pkgKey?"selected":""}>Інший розмір / не визначився</option></select></div>
+    <div class="field full"><label for="${id}-msg">Кілька слів про ділянку</label><textarea id="${id}-msg" name="msg" placeholder="Бажаний розмір, коли плануєте, що вже є на ділянці"></textarea></div>
+    <div class="field full"><label for="${id}-file">Фото або план ділянки, за бажанням</label><input id="${id}-file" name="file" type="file" accept="image/*,.pdf"></div>
+    <div class="field full err" id="${id}-err" role="alert"></div>
+    <div class="full row-btns" style="align-items:center;justify-content:space-between">
+      <p class="fine">Відповімо протягом робочого дня. Дані використовуємо лише для зв’язку з вами.</p>
+      <button class="btn" type="submit">Надіслати запит <span aria-hidden="true">→</span></button>
+    </div>
+  </form><div id="${id}-out"></div>`;
+}
+
+function bindForm(id, getConfig){
+  const f=$("#"+id); if(!f) return;
+  f.addEventListener("submit", async e=>{
+    e.preventDefault();
+    const v=Object.fromEntries(new FormData(f).entries());
+    const err=$("#"+id+"-err");
+    if(!v.name.trim()||!v.contact.trim()){err.textContent="Вкажіть ім’я і телефон або email, щоб ми могли відповісти.";return}
+    err.textContent="";
+    const cfg=getConfig?getConfig():null;
+    const p=PK[v.pkg];
+    const L=["Запит з сайту "+CONFIG.brand,
+      "Ім’я: "+v.name.trim(),"Контакт: "+v.contact.trim(),"Місто: "+(v.city.trim()||"не вказано"),
+      "Комплектація: "+(p?p.name+" · 5 × 3 м":"інший розмір / підбір")];
+    if(cfg){L.push("Опції: "+(cfg.chosen.length?cfg.chosen.map(o=>o.t+" ("+eur(o.p)+")").join("; "):"без опцій"));L.push("Орієнтовна вартість: "+eur(cfg.total)+(cfg.calc?" + позиції за розрахунком":""))}
+    else if(p){L.push("Орієнтовна вартість: від "+eur(p.price))}
+    if(v.msg.trim())L.push("Коментар: "+v.msg.trim());
+    if(v.file&&v.file.name)L.push("Файл: "+v.file.name);
+    const text=L.join("\n");
+    let sent=false;
+    if(CONFIG.formEndpoint){
+      try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...v,file:undefined,summary:text})});sent=r.ok}catch(e){sent=false}
+    }
+    const out=$("#"+id+"-out");
+    out.innerHTML=`<div class="receipt">
+      <span class="lbl">${sent?"Запит надіслано":"Ваш запит готовий"}</span>
+      <h3 class="disp" style="font-size:clamp(28px,3vw,40px)">${sent?"Дякуємо. Зв’яжемося протягом робочого дня.":"Надішліть його нам у Telegram або на пошту."}</h3>
+      <pre id="${id}-txt"></pre>
+      <div class="row-btns"><button class="btn" type="button" id="${id}-copy">Скопіювати запит</button><span class="lbl" style="align-self:center">${esc(CONFIG.telegram)} · ${esc(CONFIG.email)}</span></div>
+    </div>`;
+    $("#"+id+"-txt").textContent=text;
+    $("#"+id+"-copy").onclick=()=>copyText(text);
+    f.hidden=true;
+    out.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});
+  });
+}
+
+function faqHTML(list){return `<div class="faq">${list.map(([q,a])=>`<details class="rv"><summary>${q}<i aria-hidden="true">+</i></summary><p class="a">${a}</p></details>`).join("")}</div>`}
+function processHTML(){return `<div class="steps">${PROCESS.map(([t,d],i)=>`<div class="step rv"><span class="n">${String(i+1).padStart(2,"0")} / 06</span><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>`}
+function ctaHTML(){return `<section class="sec wrap"><div class="big-cta">
+  <span class="lbl rv">Почнімо з розмови</span>
+  <a class="mail rv" href="#kontakty" data-cursor="Написати"><span>${esc(CONFIG.email)}</span></a>
+  <div class="row-btns rv"><a class="btn" href="#kontakty">Обговорити проєкт <span aria-hidden="true">→</span></a><button class="btn ghost" type="button" data-copy="${esc(CONFIG.phone)}">${esc(CONFIG.phone)}</button></div>
+</div></section>`}
+
+/* ---------- views ---------- */
+function viewHome(){
+  const slides=HERO.map((k,i)=>`<div class="slide ${i===0?"act":""}" data-i="${i}"><img src="${IMG(PK[k].img)}" alt="Басейн ${PK[k].name}" ${i?'loading="lazy"':""}></div>`).join("");
+  const rows=ORDER.map(k=>{const p=PK[k];return `<a class="row rv" href="#${k}" data-cat="${p.cat}" data-peek="${IMG(p.peek)}" data-cursor="Дивитись">
+    <span class="n">${p.n} — ${p.type.toLowerCase()}</span>
+    <span class="thumb"><img src="${IMG(p.img)}" alt="" loading="lazy"></span>
+    <h3>${p.name}</h3>
+    <span class="spec">5 × 3 м · глибина ${p.depth} · ${p.entry.toLowerCase()}${k!=="bazova"?" · прихована ролета":""}${k==="relaks"?" · протитечія, аеромасаж":""}</span>
+    <span class="price num"><small>від</small>${eur(p.price)}</span>
+    <span class="arr" aria-hidden="true">→</span></a>`}).join("");
+  return `
+  <section class="hero" id="hero">
+    ${slides}
+    <div class="badge wrap"><span class="lbl">Офіційний дилер Diamant Unipool в Україні</span></div>
+    <div class="cap wrap">
+      <h1 class="disp">${lines(["Басейн.","Частина дому."])}</h1>
+      <div class="meta">
+        <div class="counter num"><span id="hcount">01</span><span class="bar"><i id="hbar"></i></span><span>03</span></div>
+        <span class="lbl" id="hname">${PK.komfort.name} · ${PK.komfort.type.toLowerCase()}</span>
+        <a class="view" id="hlink" href="#komfort">Переглянути</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="intro">
+      <div class="side"><span class="lbl">PLESO · з 2026</span><span class="lbl">Сталеві басейни<br>для приватних домів</span></div>
+      <div>
+        <p class="statement rv">Ми продаємо, комплектуємо й запускаємо басейни з нержавіючої сталі чеського заводу Diamant Unipool. <em>Три готові комплектації 5 × 3 м, зрозуміла ціна в євро і одна команда від вибору до першого запливу.</em></p>
+        <p class="body rv">Плесо — тиха глибока частина річки, де вода стоїть рівно. Таким ми бачимо приватний басейн: спокійна лінія води біля дому, без зайвих деталей і без сюрпризів у кошторисі.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tight wrap" id="komplektatsii">
+    <div class="sec-head"><span class="lbl">Комплектації</span><h2 class="rv">Три способи бути біля води.</h2></div>
+    <div class="filters" role="group" aria-label="Фільтр за типом басейну">
+      <button type="button" data-f="all" aria-pressed="true">Усі<sup>3</sup></button>
+      <button type="button" data-f="skim" aria-pressed="false">Скімерні<sup>1</sup></button>
+      <button type="button" data-f="over" aria-pressed="false">Переливні<sup>2</sup></button>
+    </div>
+    <div class="index">${rows}
+      <a class="row rv" href="#kontakty" data-cat="custom" data-peek="${IMG("montazh.jpg")}" data-cursor="Запитати">
+        <span class="n">04 — індивідуально</span><span class="thumb"><img src="${IMG("montazh.jpg")}" alt="" loading="lazy"></span>
+        <h3>Інший розмір</h3><span class="spec">Від 4 × 3 до 10 × 3,5 м · скімерні й переливні · окремостоячі для тераси</span>
+        <span class="price"><small>ціна</small>за розрахунком</span><span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <p class="lbl" style="margin-top:18px">Ціна комплектації — чаша й обладнання. Доставка, монтаж і запуск — окремо.</p>
+  </section>
+
+  <section class="band" aria-label="Фото басейну">
+    <img src="${IMG("d-dim.jpg")}" alt="Тераса приватного дому біля басейну" data-par loading="lazy">
+    <div class="cap wrap"><span class="lbl">Басейн, що продовжує дім</span><span class="lbl">Переливний · 5 × 3 м</span></div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="sec-head"><span class="lbl">Матеріал</span><h2 class="rv">Сталь, з якої зроблена чаша.</h2></div>
+    <div class="figs">${STEEL.map(([b,s])=>`<div class="fig rv"><b>${b}</b><span>${s}</span></div>`).join("")}</div>
+  </section>
+
+  <section class="sec tight wrap">
+    <div class="sec-head"><span class="lbl">Порівняння</span><h2 class="rv">Усе основне поруч.</h2></div>
+    <div class="cmp-wrap rv"><table class="cmp">
+      <thead><tr><th></th>${ORDER.map(k=>`<th><a href="#${k}">${PK[k].name}</a></th>`).join("")}</tr></thead>
+      <tbody>
+        <tr><th>Тип</th><td>Скімерний</td><td>Переливний</td><td>Переливний</td></tr>
+        <tr><th>Розмір</th><td>5 × 3 м</td><td>5 × 3 м</td><td>5 × 3 м</td></tr>
+        <tr><th>Глибина</th><td>1,4 м (1,5 — опція)</td><td>1,34 м (1,5 — опція)</td><td>1,5 м</td></tr>
+        <tr><th>Вхід</th><td>Навісна драбина</td><td>Римські сходи</td><td>Римські сходи</td></tr>
+        <tr><th>Підсвітка</th><td>Включено</td><td>Включено</td><td>Включено</td></tr>
+        <tr><th>Прихована ролета</th><td class="no">Опція</td><td>Включено</td><td>Включено</td></tr>
+        <tr><th>Протитечія</th><td class="no">Опція</td><td class="no">Опція</td><td>Включено</td></tr>
+        <tr><th>Масаж</th><td class="no">Опція</td><td class="no">Опція</td><td>Лава з аеромасажем</td></tr>
+        <tr class="pr"><th>Вартість</th>${ORDER.map(k=>`<td class="num">від ${eur(PK[k].price)}</td>`).join("")}</tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="sec-head"><span class="lbl">Деталі</span><h2 class="rv">Що робить басейн тихим.</h2></div>
+    <div class="details">
+      <div class="det d1"><div class="ph clip"><img src="${IMG("d-rolet.jpg")}" alt="Прихована ролета на воді" loading="lazy"></div><div class="hd"><span class="lbl">01</span><h3>Прихована ролета</h3></div><p>Ламелі розгортаються по воді, а вал схований під лавою всередині чаші. Ні короба на терасі, ні вала біля краю.</p></div>
+      <div class="det d2"><div class="ph clip"><img src="${IMG("d-perelyv.jpg")}" alt="Переливний жолоб з решіткою" loading="lazy"></div><div class="hd"><span class="lbl">02</span><h3>Переливний жолоб</h3></div><p>Вода стоїть урівень з терасою і переливається в жолоб. Поверхня завжди чиста, листя не затримується.</p></div>
+      <div class="det d3"><div class="ph clip"><img src="${IMG("d-masazh.jpg")}" alt="Масажні форсунки в лаві" loading="lazy"></div><div class="hd"><span class="lbl">03</span><h3>Масаж і протитечія</h3></div><p>Турбіна FLOWjet для плавання на місці і лава з форсунками для відпочинку. Керування кнопкою на борту.</p></div>
+      <div class="det d4"><div class="ph clip"><img src="${IMG("d-skhody.jpg")}" alt="Римські сходи" loading="lazy"></div><div class="hd"><span class="lbl">04</span><h3>Римські сходи</h3></div><p>Широкий вхід у воду по дузі. На сходинках зручно сидіти, а дітям — гратися на мілкому.</p></div>
+    </div>
+  </section>
+
+  <section class="sec tight wrap">
+    <div class="sec-head"><span class="lbl">Порядок роботи</span><h2 class="rv">Від розмови до першого запливу.</h2></div>
+    ${processHTML()}
+  </section>
+
+  <section class="sec tight wrap">
+    <div class="sec-head"><span class="lbl">Запитання</span><h2 class="rv">Перед замовленням.</h2></div>
+    ${faqHTML(FAQ)}
+  </section>
+  ${ctaHTML()}`;
+}
+
+function viewPackage(k){
+  const p=PK[k];
+  const others=ORDER.filter(x=>x!==k);
+  return `
+  <section class="p-hero">
+    <img src="${IMG(p.img)}" alt="Басейн ${p.name}" data-par>
+    <div class="cap wrap">
+      <div><span class="lbl">${p.n} / 03 · ${p.type} басейн</span><h1 class="disp">${lines([p.name])}</h1></div>
+      <span class="scroll-cue">Гортайте вниз <i aria-hidden="true">↓</i></span>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="passport">
+      <div class="desc">
+        <span class="lbl">Про комплектацію</span>
+        <h2 class="disp rv" style="font-size:clamp(36px,4.6vw,68px)">${p.title}</h2>
+        <p class="rv">${p.lead}</p>
+        <div class="row-btns rv"><a class="btn" href="#${k}" data-to="cfg">Обрати опції <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <dl class="kv rv">
+        <div><dt>Виробник</dt><dd>Diamant Unipool, Чехія</dd></div>
+        <div><dt>Тип</dt><dd>${p.type}</dd></div>
+        <div><dt>Розмір</dt><dd>5 × 3 м, внутрішній</dd></div>
+        <div><dt>Глибина</dt><dd>${p.depth}</dd></div>
+        <div><dt>Сталь</dt><dd>AISI 316L, стінка 2,5 мм, K400</dd></div>
+        <div><dt>Вхід</dt><dd>${p.entry}</dd></div>
+        <div><dt>Накриття</dt><dd>${k==="bazova"?"Прихована ролета — опція":"Прихована ролета з мотором"}</dd></div>
+        <div class="pr"><dt>Вартість</dt><dd class="num">від ${eur(p.price)}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec tight wrap">
+    <div class="gal">
+      <figure class="g1"><div class="ph clip"><img src="${IMG(p.gal[0][0])}" alt="${p.gal[0][1]}" loading="lazy"></div><figcaption>${p.gal[0][1]}</figcaption></figure>
+      <figure class="g2"><div class="ph clip"><img src="${IMG(p.gal[1][0])}" alt="${p.gal[1][1]}" loading="lazy"></div><figcaption>${p.gal[1][1]}</figcaption></figure>
+      <figure class="g3"><div class="ph clip"><img src="${IMG(p.gal[2][0])}" alt="${p.gal[2][1]}" loading="lazy"></div><figcaption>${p.gal[2][1]}</figcaption></figure>
+    </div>
+    <p class="quote rv" style="margin-top:clamp(48px,7vw,96px)">«${p.quote}»</p>
+  </section>
+
+  <section class="sec tight wrap">
+    <div class="sec-head"><span class="lbl">Склад</span><h2 class="rv">Що входить у ціну.</h2></div>
+    <div class="incl">
+      <div>
+        <ul>${p.incl.map((t,i)=>`<li class="rv"><span class="n">${String(i+1).padStart(2,"0")}</span><span>${t}</span></li>`).join("")}</ul>
+        <h3 class="rv" style="font-family:var(--f-display);font-weight:500;font-size:22px;margin:40px 0 10px">Як працює фільтрація</h3>
+        <p class="rv" style="color:var(--muted);margin:0;max-width:52ch">${p.filtration}</p>
+      </div>
+      <div class="plan rv">${planSVG(k)}<p class="lbl">План · внутрішні розміри, мм · схема не є монтажним кресленням</p></div>
+    </div>
+  </section>
+
+  <section class="sec tight wrap" id="cfg">
+    <div class="sec-head"><span class="lbl">Опції та ціна</span><h2 class="rv">Додайте своє.</h2></div>
+    <div class="cfg">
+      <div class="opts">${p.opts.map(o=>{const x=OPT[o];return `<label class="opt" for="o-${o}"><input type="checkbox" id="o-${o}" value="${o}"><span><b>${x.t}</b><span>${x.d}</span></span><span class="p num">${x.p==null?"за розрахунком":"+ "+eur(x.p)}</span></label>`}).join("")}</div>
+      <aside class="sum" aria-live="polite">
+        <span class="lbl">Ваша комплектація — ${p.name}</span>
+        <div class="tot num" id="tot">${eur(p.price)}</div>
+        <ul id="sumList"></ul>
+        <p class="note">Орієнтовна ціна чаші й обладнання без доставки, монтажу і запуску. Ціни в євро; оплата в гривні за комерційним курсом на день оплати.</p>
+        <a class="btn" href="#${k}" data-to="req">Надіслати цей вибір <span aria-hidden="true">↓</span></a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec tight wrap" id="req">
+    <div class="sec-head"><span class="lbl">Запит</span><h2 class="rv">Обговорімо ${p.name.toLowerCase()}.</h2></div>
+    ${formHTML("f-pkg",k)}
+  </section>
+
+  <section class="sec tight wrap">
+    <span class="lbl">Також у колекції</span>
+    <div class="more" style="margin-top:18px">${others.map(o=>`<a href="#${o}" data-peek="${IMG(PK[o].peek)}" data-cursor="Дивитись">${PK[o].name}<small class="num">${PK[o].type.toLowerCase()} · від ${eur(PK[o].price)}</small></a>`).join("")}<a href="#dostavka">Доставка і монтаж<small>як це відбувається</small></a></div>
+  </section>`;
+}
+
+function viewDelivery(){
+  return `
+  <section class="ph-top wrap">
+    <span class="lbl">Доставка · монтаж · запуск</span>
+    <h1 class="disp" style="margin-top:18px">${lines(["Зрозумілі межі","робіт."])}</h1>
+  </section>
+  <section class="sec wrap">
+    <div class="split">
+      <div class="ph clip" style="aspect-ratio:7/5"><img src="${IMG("montazh.jpg")}" alt="Встановлення сталевої чаші краном"></div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <p class="statement rv" style="font-size:clamp(24px,2.6vw,38px)">Чаша приїжджає з Чехії цілою, зварена і відшліфована на заводі. На ділянці її ставлять краном за один день.</p>
+        <p class="rv" style="color:var(--muted);margin:0;max-width:52ch">Ми відповідаємо за підбір, постачання, монтаж обладнання і запуск. Будівельну частину робить ваш підрядник або наш партнер — домовляємось до початку робіт і фіксуємо в договорі.</p>
+      </div>
+    </div>
+  </section>
+  <section class="sec tight wrap">
+    <div class="sec-head"><span class="lbl">Хто що робить</span><h2 class="rv">Відповідальність сторін.</h2></div>
+    <div class="cmp-wrap rv" style="border-top:0"><table class="resp">
+      <thead><tr><th>Етап</th><th>PLESO</th><th>Замовник або підрядник</th></tr></thead>
+      <tbody>
+        <tr><td>Підбір і специфікація</td><td>Комплектація, обладнання, план розміщення</td><td>Побажання, план ділянки</td></tr>
+        <tr><td>Доставка з Чехії</td><td>Логістика, страхування, розвантаження</td><td>Під’їзд для вантажівки й крана</td></tr>
+        <tr><td>Котлован і основа</td><td>Креслення основи під модель</td><td>Земляні роботи, бетонна плита</td></tr>
+        <tr><td>Підключення</td><td>Схема підключень</td><td>Електрика і вода до технічного місця</td></tr>
+        <tr><td>Монтаж обладнання</td><td>Фільтрація, ролета, світло, опції</td><td>—</td></tr>
+        <tr><td>Запуск</td><td>Перевірка систем, інструктаж з догляду</td><td>Приймання басейну</td></tr>
+      </tbody></table></div>
+  </section>
+  <section class="sec tight wrap">
+    <div class="sec-head"><span class="lbl">Підготовка ділянки</span><h2 class="rv">Що варто перевірити заздалегідь.</h2></div>
+    <div class="cols3">
+      <div class="rv"><span class="lbl">Доступ</span><h3>Під’їзд техніки</h3><p>Вантажівка з чашею і кран мають дістатися до місця. Перевіримо маршрут за фото чи на огляді.</p></div>
+      <div class="rv"><span class="lbl">Основа</span><h3>Плита під модель</h3><p>Скімерну чашу ставлять на бетонну основу й обсипають сухою сумішшю. Переливну — кріплять до плити з боковими опорами.</p></div>
+      <div class="rv"><span class="lbl">Техніка</span><h3>Місце для обладнання</h3><p>Фільтр і насоси стоять у технічному приміщенні або в шахті поруч із басейном. Шахту можна замовити разом із чашею.</p></div>
+    </div>
+  </section>
+  <section class="sec tight wrap"><div class="sec-head"><span class="lbl">Порядок</span><h2 class="rv">Шість кроків.</h2></div>${processHTML()}</section>
+  <section class="sec tight wrap"><div class="sec-head"><span class="lbl">Запитання</span><h2 class="rv">Про доставку і монтаж.</h2></div>${faqHTML([FAQ[0],FAQ[2],FAQ[3]])}</section>
+  ${ctaHTML()}`;
+}
+
+function viewAbout(){
+  return `
+  <section class="ph-top wrap">
+    <span class="lbl">Про нас</span>
+    <h1 class="disp" style="margin-top:18px">${lines(["Одна команда.","Один завод."])}</h1>
+  </section>
+  <section class="sec wrap">
+    <div class="intro">
+      <div class="side"><span class="lbl">Офіційний дилер<br>Diamant Unipool в Україні</span></div>
+      <p class="statement rv">PLESO — українська компанія, яка привозить басейни з нержавіючої сталі від чеського виробника Diamant Unipool і доводить їх до першого запливу.</p>
+    </div>
+  </section>
+  <section class="band"><img src="${IMG("komfort.jpg")}" alt="Переливний басейн біля приватного дому" data-par loading="lazy"><div class="cap wrap"><span class="lbl">Комфорт · 5 × 3 м</span><span class="lbl">Diamant INOXline</span></div></section>
+  <section class="sec wrap">
+    <div class="cols3">
+      <div class="rv"><span class="lbl">01</span><h3>Компанія</h3><p>Ми продаємо, комплектуємо і запускаємо приватні басейни в Україні. Працюємо напряму з заводом, тому знаємо ціну кожної деталі й показуємо її відкрито.</p><p>Спілкуємося українською, договір і ціни — до початку робіт.</p></div>
+      <div class="rv"><span class="lbl">02</span><h3>Наш підхід</h3><p>Як в автосалоні: три готові комплектації з відомою ціною і список опцій. Спершу ви обираєте, як хочете жити біля води, потім ми підбираємо техніку.</p><p>Без кошторисів на сорок сторінок і прихованих позицій.</p></div>
+      <div class="rv"><span class="lbl">03</span><h3>Виробник</h3><p>Diamant Unipool виготовляє сталеві басейни в чеському місті Валашське Меджиржичі. Чаші INOXline зварюють з нержавіючої сталі AISI 316L і шліфують до K400.</p><p>Скімерні й переливні, вбудовані й окремостоячі.</p></div>
+    </div>
+  </section>
+  <section class="sec tight wrap"><div class="sec-head"><span class="lbl">Матеріал</span><h2 class="rv">Чому сталь.</h2></div>
+    <div class="figs">${STEEL.map(([b,s])=>`<div class="fig rv"><b>${b}</b><span>${s}</span></div>`).join("")}</div>
+  </section>
+  ${ctaHTML()}`;
+}
+
+function viewContacts(){
+  return `
+  <section class="ph-top wrap">
+    <span class="lbl">Контакти</span>
+    <div class="big-cta" style="margin-top:18px"><a class="mail" href="#kontakty" data-copy="${esc(CONFIG.email)}" data-cursor="Копіювати">${lines([esc(CONFIG.email)])}</a></div>
+    <p style="color:var(--muted);max-width:54ch;margin:24px 0 0">Для розрахунку басейну, візиту на ділянку і співпраці з архітекторами та будівельниками.</p>
+  </section>
+  <section class="sec wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-list">
+          <div><span class="lbl">Телефон</span><span class="num">${esc(CONFIG.phone)}</span><button class="copy" type="button" data-copy="${esc(CONFIG.phone)}">Копіювати</button></div>
+          <div><span class="lbl">Email</span><span>${esc(CONFIG.email)}</span><button class="copy" type="button" data-copy="${esc(CONFIG.email)}">Копіювати</button></div>
+          <div><span class="lbl">Telegram</span><span>${esc(CONFIG.telegram)}</span><button class="copy" type="button" data-copy="${esc(CONFIG.telegram)}">Копіювати</button></div>
+          <div><span class="lbl">Географія</span><span>${esc(CONFIG.city)}</span><span></span></div>
+          <div><span class="lbl">Графік</span><span>${esc(CONFIG.hours)}</span><span></span></div>
+          <div><span class="lbl">Компанія</span><span>${esc(CONFIG.company)}</span><span></span></div>
+        </div>
+        <p class="lbl" style="margin-top:20px">Офіційний дилер Diamant Unipool в Україні</p>
+      </div>
+      <div><span class="lbl">Розкажіть про простір</span><div style="margin-top:20px">${formHTML("f-contact",null)}</div></div>
+    </div>
+  </section>`;
+}
+
+function footerHTML(){
+  return `<div class="f-grid">
+    <div><h4>PLESO</h4><p style="max-width:34ch;color:var(--muted)">Басейни з нержавіючої сталі для приватних домів. Офіційний дилер Diamant Unipool в Україні.</p></div>
+    <div><h4>Комплектації</h4>${ORDER.map(k=>`<a href="#${k}">${PK[k].name}</a>`).join("")}<a href="#kontakty">Інший розмір</a></div>
+    <div><h4>Інформація</h4><a href="#dostavka">Доставка і монтаж</a><a href="#pro-nas">Про нас</a><a href="#kontakty">Контакти</a></div>
+    <div><h4>Зв’язок</h4><p class="num">${esc(CONFIG.phone)}</p><p>${esc(CONFIG.email)}</p><p>${esc(CONFIG.telegram)}</p></div>
+  </div>
+  <div class="f-word" aria-hidden="true">PLESO</div>
+  <div class="f-bot"><span>Ціни вказано в євро. Оплата в гривні за комерційним курсом на день оплати.</span><span>© 2026 ${esc(CONFIG.company)}</span></div>`;
+}
+
+/* ---------- router ---------- */
+const ROUTES={home:viewHome,bazova:()=>viewPackage("bazova"),komfort:()=>viewPackage("komfort"),relaks:()=>viewPackage("relaks"),dostavka:viewDelivery,"pro-nas":viewAbout,kontakty:viewContacts};
+const TITLES={home:"PLESO — басейни з нержавіючої сталі",bazova:"Базова — PLESO",komfort:"Комфорт — PLESO",relaks:"Релакс — PLESO",dostavka:"Доставка і монтаж — PLESO","pro-nas":"Про нас — PLESO",kontakty:"Контакти — PLESO"};
+let current=null, heroTimer=null, pendingAnchor=null;
+const app=$("#app");
+
+function route(){
+  const h=(location.hash||"").replace("#","");
+  const key=ROUTES[h]?h:"home";
+  if(key===current && !pendingAnchor) return;
+  const first=current===null;
+  const go=()=>{
+    clearInterval(heroTimer);
+    app.innerHTML=ROUTES[key]();
+    current=key;
+    document.title=TITLES[key];
+    $$(".nav a").forEach(a=>a.classList.toggle("cur",a.getAttribute("href")==="#"+key && !a.dataset.to));
+    window.scrollTo(0,0);
+    setup(key);
+    if(pendingAnchor){const t=document.getElementById(pendingAnchor);pendingAnchor=null;if(t)setTimeout(()=>t.scrollIntoView({behavior:reduce?"auto":"smooth"}),first?0:120)}
+    app.classList.remove("out");
+  };
+  if(first||reduce){go()}else{app.classList.add("out");setTimeout(go,330)}
+}
+
+function setup(key){
+  // header over image?
+  updateHeader();
+  // reveal: only elements below fold get the hidden pre-state
+  const vh=innerHeight;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});
+  if(!reduce) $$(".rv,.clip",app).forEach(el=>{if(el.getBoundingClientRect().top>vh*0.92){el.classList.add("pre");io.observe(el)}});
+  // filters
+  $$(".filters button",app).forEach(b=>b.onclick=()=>{
+    $$(".filters button",app).forEach(x=>x.setAttribute("aria-pressed",x===b));
+    const f=b.dataset.f;
+    $$(".index .row",app).forEach(r=>r.classList.toggle("hide",!(f==="all"||r.dataset.cat===f||r.dataset.cat==="custom")));
+  });
+  // hero slideshow
+  if(key==="home") startHero();
+  // configurator
+  if(PK[key]) bindCfg(key);
+  bindForm("f-pkg",()=>cfgState);
+  bindForm("f-contact",null);
+  bindPeek();
+}
+
+let cfgState=null;
+function bindCfg(k){
+  const p=PK[k], tot=$("#tot",app), list=$("#sumList",app);
+  let shown=p.price;
+  const calc=()=>{
+    const chosen=$$(".opts input:checked",app).map(i=>({...OPT[i.value]}));
+    const total=p.price+chosen.reduce((s,o)=>s+(o.p||0),0);
+    cfgState={chosen,total,calc:chosen.some(o=>o.p==null)};
+    list.innerHTML="";
+    const li=(a,b)=>{const el=document.createElement("li");const s1=document.createElement("span");s1.textContent=a;const s2=document.createElement("span");s2.textContent=b;el.append(s1,s2);list.append(el)};
+    li("Комплектація "+p.name,eur(p.price));
+    chosen.forEach(o=>li(o.t,o.p==null?"за розрахунком":"+ "+eur(o.p)));
+    // animate number
+    const from=shown,to=total,t0=performance.now(),d=reduce?1:600;
+    const step=t=>{const q=Math.min(1,(t-t0)/d),e=1-Math.pow(1-q,3);tot.textContent=eur(Math.round((from+(to-from)*e)/10)*10);if(q<1)requestAnimationFrame(step);else{tot.textContent=eur(to)+(cfgState.calc?" +":"");shown=to}};
+    requestAnimationFrame(step);
+    try{sessionStorage.setItem("pleso-"+k,JSON.stringify(chosen.map(o=>Object.keys(OPT).find(x=>OPT[x].t===o.t&&OPT[x].p===o.p))))}catch(e){}
+  };
+  try{const saved=JSON.parse(sessionStorage.getItem("pleso-"+k)||"[]");saved.forEach(v=>{const i=$("#o-"+v,app);if(i)i.checked=true})}catch(e){}
+  $$(".opts input",app).forEach(i=>i.addEventListener("change",calc));
+  calc();
+}
+
+function startHero(){
+  const slides=$$(".hero .slide",app); if(!slides.length) return;
+  let i=0; const bar=$("#hbar",app);
+  const set=n=>{slides.forEach((s,j)=>s.classList.toggle("act",j===n));const p=PK[HERO[n]];
+    $("#hcount",app).textContent=String(n+1).padStart(2,"0");$("#hname",app).textContent=p.name+" · "+p.type.toLowerCase();$("#hlink",app).setAttribute("href","#"+HERO[n]);
+    bar.classList.remove("run");void bar.offsetWidth;if(!reduce)bar.classList.add("run")};
+  set(0);
+  if(!reduce) heroTimer=setInterval(()=>{i=(i+1)%slides.length;set(i)},6000);
+}
+
+/* peek image + custom cursor */
+const peek=$("#peek"), cur=$("#cur");
+let mx=0,my=0,px=0,py=0,cx=0,cy=0;
+addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY},{passive:true});
+function bindPeek(){
+  $$("[data-peek]",app).forEach(el=>{
+    el.addEventListener("mouseenter",()=>{let img=[...peek.children].find(i=>i.dataset.src===el.dataset.peek);
+      if(!img){img=new Image();img.src=el.dataset.peek;img.dataset.src=el.dataset.peek;img.alt="";peek.append(img)}
+      [...peek.children].forEach(i=>i.classList.toggle("on",i===img));peek.classList.add("show")});
+    el.addEventListener("mouseleave",()=>peek.classList.remove("show"));
+  });
+  $$("[data-cursor]",app).forEach(el=>{
+    el.addEventListener("mouseenter",()=>{cur.textContent=el.dataset.cursor;cur.classList.add("on")});
+    el.addEventListener("mouseleave",()=>cur.classList.remove("on"));
+  });
+}
+function loop(){
+  px+=(mx-px)*.12;py+=(my-py)*.12;cx+=(mx-cx)*.25;cy+=(my-cy)*.25;
+  peek.style.left=px+"px";peek.style.top=py+"px";
+  cur.style.transform=`translate(${cx}px,${cy}px) scale(${cur.classList.contains("on")?1:0})`;
+  // parallax
+  if(!reduce) $$("[data-par]",app).forEach(img=>{const r=img.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const prog=(r.top+r.height/2-innerHeight/2)/innerHeight;img.style.transform=`translateY(${prog*-8}%)`});
+  requestAnimationFrame(loop);
+}
+cur.style.left="0";cur.style.top="0";cur.style.margin="-46px 0 0 -46px";
+
+/* header state */
+function updateHeader(){
+  const hdr=$("#hdr");const overImg=!!$(".hero,.p-hero",app);
+  const y=scrollY;const lim=overImg?(($(".hero,.p-hero",app).offsetHeight)-80):10;
+  hdr.classList.toggle("solid",y>lim||!overImg);
+  hdr.classList.toggle("on-img",overImg&&y<=lim);
+}
+addEventListener("scroll",updateHeader,{passive:true});
+
+/* global clicks: in-page anchors and copy */
+document.addEventListener("click",e=>{
+  const c=e.target.closest("[data-copy]");
+  if(c){e.preventDefault();copyText(c.dataset.copy);return}
+  const a=e.target.closest("a[data-to]");
+  if(a){
+    const target=a.dataset.to, href=a.getAttribute("href").replace("#","")||"home";
+    e.preventDefault(); closeMenu();
+    if(current===href||(href==="home"&&current==="home")){const t=document.getElementById(target);if(t)t.scrollIntoView({behavior:reduce?"auto":"smooth"})}
+    else{pendingAnchor=target;if(location.hash==="#"+href)route();else location.hash=href}
+    return;
+  }
+  const l=e.target.closest('a[href^="#"]');
+  if(l){closeMenu(); if(l.getAttribute("href")==="#"+current){e.preventDefault();window.scrollTo({top:0,behavior:reduce?"auto":"smooth"})}}
+});
+
+/* mobile menu */
+const menu=$("#menu"),burger=$("#burger");
+function closeMenu(){menu.classList.remove("open");menu.setAttribute("aria-hidden","true");burger.setAttribute("aria-expanded","false")}
+burger.onclick=()=>{menu.classList.add("open");menu.setAttribute("aria-hidden","false");burger.setAttribute("aria-expanded","true")};
+$("#menuClose").onclick=closeMenu;
+$("#menuContact").textContent=CONFIG.phone+" · "+CONFIG.email;
+
+$("#footer").innerHTML=footerHTML();
+addEventListener("hashchange",route);
+
+/* loader then first render */
+(function boot(){
+  route();
+  requestAnimationFrame(loop);
+  const L=$("#loader"),pct=$("#pct");
+  if(reduce||!L){if(L)L.remove();return}
+  let seen=false;try{seen=sessionStorage.getItem("pleso-seen")==="1";sessionStorage.setItem("pleso-seen","1")}catch(e){}
+  if(seen){L.remove();return}
+  const t0=performance.now(),D=1100;
+  const tick=t=>{const q=Math.min(1,(t-t0)/D);pct.textContent=String(Math.round(q*100)).padStart(3,"0");if(q<1)requestAnimationFrame(tick);else{L.classList.add("done");setTimeout(()=>L.remove(),950)}};
+  requestAnimationFrame(tick);
+})();
+</script>
+
+</body>
+</html>
